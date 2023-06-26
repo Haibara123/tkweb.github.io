@@ -218,16 +218,18 @@
    <div class="login">
     <div class="login__container">
       <h1>Đăng Nhập</h1>
-      <form>
-        <h5>User name</h5>
-<!-- 	<label for="username">Username:</label> -->
-        <input type="text" class="input-login-username" name="username" id="username" />
-        <h5>Email</h5>
-        <input type="text" class="input-login-username" />
-        <h5>Password</h5>
-        <input type="password" class="input-login-password" />
-        <button type="submit" href="index.html" class="login__signInButton">Đăng Nhập</button>
-      </form>
+      <form id="login-form" action="" method="post">
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username" class="input-login">
+		  
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password" class="input-login">
+		  
+			<label for="email">Email:</label>
+			<input type="email" name="email" id="email" class="input-login">
+		  
+			<button type="submit" class="login__signInButton">Đăng Nhập</button>
+		  </form>
       <a href="Register.html" class="login__registerButton">Tạo tài khoản mới</a>
         
       
