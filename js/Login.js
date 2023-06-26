@@ -33,7 +33,7 @@ function validateForm() {
 
   if (isValid) {
     alert("Đăng nhập thành công!");
-	  window.location.href = "../index.html";
+	  window.location.href = "https://haibara123.github.io/tkweb.github.io/";
   }
 
   event.preventDefault();
