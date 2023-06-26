@@ -1,36 +1,40 @@
-// validation form login
-const inputUsername = document.querySelector(".input-login-username");
-const inputPassword = document.querySelector(".input-login-password");
-const btnLogin = document.querySelector(".login__signInButton");
+document.getElementById("login-form").onsubmit = function(event) {
+  validateForm();
+  event.preventDefault();
+};
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+  var isValid = true;
 
-$(document).ready(function(){
-  $("#eye").click(function(){
-      $(this).toggleClass('open');
-      $(this).children('i').toggleClass('fa-eye-slash fa-eye');
-      if($(this).hasClass('open')){
-          $(this).prev().attr('type','text');
-      }else{
-          $(this).prev().attr('type','password');
-      }
-  }) ;
-});
+  if (username === "") {
+    alert("Vui lòng nhập username");
+    isValid = false;
+  }
 
-// validation form login
+  if (password === "") {
+    alert("Vui lòng nhập password");
+    isValid = false;
+  }
 
-btnLogin.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (inputUsername.value === "" || inputPassword.value === "") {
-    alert("vui lòng không để trống");
-  } else {
-    const user = JSON.parse(localStorage.getItem(inputUsername.value));
-    if (
-      user.username === inputUsername.value &&
-      user.password === inputPassword.value
-    ) {
-      alert("Đăng Nhập Thành Công");
-      window.location.href = "index.html";
-    } else {
-      alert("Đăng Nhập Thất Bại");
+  if (email === "") {
+    alert("Vui lòng nhập email");
+    isValid = false;
+  }
+  else {
+    // Kiểm tra định dạng email
+    var emailPattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
+    if (!emailPattern.test(email)) {
+      alert("Định dạng email không hợp lệ");
+      isValid = false;
     }
   }
-});
+
+  if (isValid) {
+    alert("Đăng nhập thành công!");
+	  window.location.href = "../index.html";
+  }
+
+  event.preventDefault();
+}
