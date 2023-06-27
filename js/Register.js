@@ -12,7 +12,7 @@ function validateForm() {
 	var isValid = true;
 
 	if (username === "") {
-		alert("Vui lòng nhập username");
+		alert("Vui lòng nhập tên đăng nhập");
 		isValid = false;
 	}
 
@@ -29,30 +29,30 @@ function validateForm() {
 	}
 
 	if (password === "") {
-		alert("Vui lòng nhập password");
+		alert("Vui lòng nhập mật khẩu");
 		isValid = false;
 	} else {
 		// Kiểm tra độ dài password
-		if (password.length < 8) {
-			alert("Password phải chứa ít nhất 8 ký tự");
+		if (password.length < 6) {
+			alert("Mật khẩu phải chứa ít nhất 6 ký tự");
 			isValid = false;
 		}
 	}
 
 	if (confirmPassword === "") {
-		alert("Vui lòng nhập confirm password");
+		alert("Vui lòng nhập xác nhận mật khẩu");
 		isValid = false;
 	} else {
 		// Kiểm tra confirm password có giống với password không
 		if (confirmPassword !== password) {
-			alert("Password không khớp");
+			alert("Mật khẩu không khớp");
 			isValid = false;
 		}
 	}
 
 	if (isValid) {
 		alert("Đăng ký thành công!");
-		window.location.href = "index.html";
+		window.location.href = "https://haibara123.github.io/tkweb.github.io/";
 	}
 
 	event.preventDefault();
