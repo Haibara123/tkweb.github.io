@@ -9,12 +9,12 @@ function validateForm() {
   var isValid = true;
 
   if (username === "") {
-    alert("Vui lòng nhập username");
+    alert("Vui lòng nhập tên đăng nhập");
     isValid = false;
   }
 
   if (password === "") {
-    alert("Vui lòng nhập password");
+    alert("Vui lòng nhập mật khẩu");
     isValid = false;
   }
 
